@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--RxSwift ToDoList-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TaskListViewController" customModule="ToDoRxSwift" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,6 +24,9 @@
                                     <segment title="Medium"/>
                                     <segment title="Low"/>
                                 </segments>
+                                <connections>
+                                    <action selector="priorityChangedWithSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="gby-2H-Tkg"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8DM-YO-Tvk">
                                 <rect key="frame" x="0.0" y="196" width="414" height="666"/>
@@ -55,7 +58,7 @@
                             <constraint firstItem="zMG-jr-Cmh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="qoV-Po-YDX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Es3-1D-7DK">
+                    <navigationItem key="navigationItem" title="RxSwift ToDoList" id="Es3-1D-7DK">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="X6T-wX-k9l">
                             <connections>
                                 <segue destination="yB2-xI-MHK" kind="presentation" id="zJE-zX-B9q"/>
@@ -108,8 +111,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add task" id="iqT-1Y-rtS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="oMp-n7-ow4"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="oMp-n7-ow4">
+                            <connections>
+                                <action selector="save" destination="33m-Nb-By6" id="zd6-mm-nPq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="prioritySegmentedControl" destination="CZZ-iK-IhK" id="SYr-jL-zrz"/>
+                        <outlet property="taskTextField" destination="vPj-7J-Glh" id="hSe-jL-QT3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GkT-5t-PIY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
